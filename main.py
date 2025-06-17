@@ -91,7 +91,7 @@ async def voicebot(audio: UploadFile):
         model_id="eleven_flash_v2_5",
         output_format="mp3_44100_128",
         voice_settings={
-        "stability": 0.3,          # more expressive and dynamic
+        "stability": 0.6,          # more expressive and dynamic
         "similarity_boost": 0.85,  # sounds more like the selected voice  # enables deeper/resonant tone
         }
     )
