@@ -107,5 +107,5 @@ async def voicebot(audio: UploadFile):
     return JSONResponse({
         "userText": user_input,
         "aiText": cleaned_reply,
-        "audioUrl": f"http://localhost:8000/static/{filename}"
+        "audioUrl": f"https://agentic-myself.onrender.com/static/{filename}"
     })
