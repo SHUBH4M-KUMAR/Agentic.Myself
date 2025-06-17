@@ -27,7 +27,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 VOICE_ID = "P7vsEyTOpZ6YUTulin8m"
-ASSISTANT_ID = "asst_bFsaVAWB3fS7RLlZ70HNWk7Q"
+ASSISTANT_ID = "asst_9QJb6tSsjtU28O7VAJ09jmo1"
 load_dotenv()
 
 elevenlabs = ElevenLabs(
