@@ -18,7 +18,7 @@ from elevenlabs import ElevenLabs, play
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # or "*" for all
+    allow_origins=["*"],  # or "*" for all
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -36,6 +36,10 @@ elevenlabs = ElevenLabs(
 client= OpenAI(
     api_key=os.getenv("OPENAI_API_KEY"),
 )
+
+@app.get("/")
+def root():
+    return {"message": "VoiceBot API is live!"}
 @app.post("/voicebot")
 async def voicebot(audio: UploadFile):
     # Step 1: Transcribe audio
@@ -87,7 +91,7 @@ async def voicebot(audio: UploadFile):
         model_id="eleven_flash_v2_5",
         output_format="mp3_44100_128",
         voice_settings={
-        "stability": 0.3,          # more expressive and dynamic
+        "stability": 0.6,          # more expressive and dynamic
         "similarity_boost": 0.85,  # sounds more like the selected voice  # enables deeper/resonant tone
         }
     )
@@ -103,5 +107,5 @@ async def voicebot(audio: UploadFile):
     return JSONResponse({
         "userText": user_input,
         "aiText": cleaned_reply,
-        "audioUrl": f"http://localhost:8000/static/{filename}"
+        "audioUrl": f"https://agentic-myself.onrender.com/static/{filename}"
     })

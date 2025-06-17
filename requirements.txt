@@ -3,3 +3,4 @@ openai==1.86.0
 load_dotenv
 uvicorn
 elevenlabs
+python-multipart

@@ -145,7 +145,7 @@ export default function VoiceBotApp() {
       const formData = new FormData();
       formData.append("audio", audioBlob, "recording.webm");
 
-      const response = await fetch("http://localhost:8000/voicebot", {
+      const response = await fetch("https://agentic-myself.onrender.com/voicebot", {
         method: "POST",
         body: formData,
       });
@@ -358,7 +358,7 @@ export default function VoiceBotApp() {
                 )}
               </div>
               <CardTitle className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                AI Voice Assistant
+                Agentic Myself
               </CardTitle>
             </div>
             <div className="flex items-center justify-center gap-3">
