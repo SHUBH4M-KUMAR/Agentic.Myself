@@ -145,7 +145,7 @@ export default function VoiceBotApp() {
       const formData = new FormData();
       formData.append("audio", audioBlob, "recording.webm");
 
-      const response = await fetch("http://localhost:8000/voicebot", {
+      const response = await fetch("https://agentic-myself.onrender.com/voicebot", {
         method: "POST",
         body: formData,
       });
