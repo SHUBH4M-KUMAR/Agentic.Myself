@@ -36,6 +36,10 @@ elevenlabs = ElevenLabs(
 client= OpenAI(
     api_key=os.getenv("OPENAI_API_KEY"),
 )
+
+@app.get("/")
+def root():
+    return {"message": "VoiceBot API is live!"}
 @app.post("/voicebot")
 async def voicebot(audio: UploadFile):
     # Step 1: Transcribe audio
